@@ -9,7 +9,6 @@ class KnapsackProblem(SearchProblem):
 
     def generate_random_state(self):
         # generate a random initial string
-        # note that with this example, not always we will find a solution
         random_state = []
         digits = '01'
         for i in range(number_of_items):
@@ -27,7 +26,7 @@ class KnapsackProblem(SearchProblem):
         #which element will be chosen ex: 1.index, 2.index...
         actions_list = []
         for i in range(number_of_items):
-            if self._is_valid((self.result(state,i))): #self.result returns current state, so weight don't calculate the next state. This is problem for our code
+            if self._is_valid((self.result(state,i))): #self.result returns current state, so weight couldn't calculate the next state.
                 actions_list.append(i)
             else:
                 continue
